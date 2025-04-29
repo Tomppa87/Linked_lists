@@ -55,6 +55,24 @@ class LinkedList {
             return currentNode.value;
     };
 
+    at(index) {
+        let counter = 0;
+        if (!this.head) {
+            return "The list is empty";
+        } else {            
+            let currentNode = this.head;
+            while (counter < index) {
+                counter += 1;
+                if (!currentNode.nextNode && counter < index) {
+                    return `List not long enough for ${index} indices`
+                }
+                currentNode = currentNode.nextNode
+            };
+            return currentNode.value;
+        };    
+
+    }
+
     toString() {
         let currentNode = this.head
         let output = ""
@@ -81,4 +99,5 @@ newLinkedList.prepend(7);
 console.log(newLinkedList.size())
 console.log(newLinkedList.first());
 console.log(newLinkedList.last());
+console.log(newLinkedList.at(5))
 newLinkedList.toString();
