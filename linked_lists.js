@@ -1,3 +1,10 @@
+class Node {
+    constructor (value) {
+        this.value = value;
+        this.nextNode = null;
+    };
+};
+
 class LinkedList {
     constructor() {
         this.head = null;
@@ -13,8 +20,14 @@ class LinkedList {
             currentNode = currentNode.nextNode;
         }
         currentNode.nextNode = newNode;
+    };
 
+    prepend(value) {
+        let newHead = new Node (value);
+        newHead.nextNode = this.head;
+        this.head = newHead;
     }
+
     toString() {
         let currentNode = this.head
         let output = ""
@@ -27,14 +40,10 @@ class LinkedList {
     }
 }
 
-class Node {
-    constructor (value) {
-        this.value = value;
-        this.nextNode = null;
-    }
-};
+
 
 let newLinkedList = new LinkedList;
 newLinkedList.append(10);
 newLinkedList.append(5);
+newLinkedList.prepend(7)
 newLinkedList.toString();
