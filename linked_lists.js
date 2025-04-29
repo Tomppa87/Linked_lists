@@ -26,17 +26,38 @@ class LinkedList {
         let newHead = new Node (value);
         newHead.nextNode = this.head;
         this.head = newHead;
+    };
+
+    size() {
+        let counter = 0;
+        if (!this.head) {
+            return counter;
+        } else {
+            counter += 1;
+            let currentNode = this.head;
+            while (currentNode.nextNode) {
+                counter += 1;
+                currentNode = currentNode.nextNode
+            };
+            return counter;
+        }
+        
     }
 
     toString() {
         let currentNode = this.head
         let output = ""
-        while (currentNode.nextNode) {
-            output += "( "+ currentNode.value + " ) -> "; 
-            currentNode = currentNode.nextNode;
-        };       
-        output += "( " + currentNode.value + " ) -> null"
-        console.log(output)     
+        if(!this.head) {
+            console.log("The list is empty")
+        } else {
+            while (currentNode.nextNode) {
+                output += "( "+ currentNode.value + " ) -> "; 
+                currentNode = currentNode.nextNode;
+            };       
+            output += "( " + currentNode.value + " ) -> null"
+            console.log(output)  
+        }
+           
     }
 }
 
@@ -46,4 +67,5 @@ let newLinkedList = new LinkedList;
 newLinkedList.append(10);
 newLinkedList.append(5);
 newLinkedList.prepend(7)
+console.log(newLinkedList.size())
 newLinkedList.toString();
