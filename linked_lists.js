@@ -47,6 +47,14 @@ class LinkedList {
         return this.head.value
     };
 
+    last() {
+        let currentNode = this.head;
+            while (currentNode.nextNode) {                
+                currentNode = currentNode.nextNode
+            };
+            return currentNode.value;
+    };
+
     toString() {
         let currentNode = this.head
         let output = ""
@@ -72,4 +80,5 @@ newLinkedList.append(5);
 newLinkedList.prepend(7);
 console.log(newLinkedList.size())
 console.log(newLinkedList.first());
+console.log(newLinkedList.last());
 newLinkedList.toString();
