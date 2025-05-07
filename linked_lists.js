@@ -1,11 +1,11 @@
-class Node {
+export class Node {
     constructor (value) {
         this.value = value;
         this.nextNode = null;
     };
 };
 
-class LinkedList {
+export class LinkedList {
     constructor() {
         this.head = null;
     }
@@ -127,7 +127,7 @@ class LinkedList {
 
 
 
-let newLinkedList = new LinkedList;
+/*let newLinkedList = new LinkedList;
 newLinkedList.append(10);
 newLinkedList.append(5);
 newLinkedList.prepend(7);
@@ -137,4 +137,4 @@ console.log(newLinkedList.last());
 console.log(newLinkedList.at(5))
 console.log(newLinkedList.find(10))
 
-newLinkedList.toString();
+newLinkedList.toString();*/
