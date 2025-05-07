@@ -82,10 +82,18 @@ class LinkedList {
                 previousNode = currentNode;
                 currentNode = currentNode.nextNode;
             };
-        }; previousNode.nextNode = null
-        console.log(previousNode)
-        return previousNode.value;
-
+        }; previousNode.nextNode = null;        
+        return;
+    };
+    contains(value) {
+        let currentNode = this.head;
+        while (currentNode) {
+            if (currentNode.value === value) {
+                return true
+            } else {
+                currentNode = currentNode.nextNode;
+            };
+        }; return false;
     }
 
     toString() {
@@ -115,5 +123,6 @@ console.log(newLinkedList.size())
 console.log(newLinkedList.first());
 console.log(newLinkedList.last());
 console.log(newLinkedList.at(5))
-console.log(newLinkedList.pop())
+console.log(newLinkedList.contains(6))
+
 newLinkedList.toString();
