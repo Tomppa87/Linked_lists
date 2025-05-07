@@ -70,6 +70,21 @@ class LinkedList {
             };
             return currentNode.value;
         };    
+    };
+    pop() {
+        let previousNode = "";
+        let currentNode = this.head;
+        while (currentNode.nextNode) {
+            if (previousNode === "") {
+                previousNode = this.head;
+                currentNode = currentNode.nextNode;
+            } else {
+                previousNode = currentNode;
+                currentNode = currentNode.nextNode;
+            };
+        }; previousNode.nextNode = null
+        console.log(previousNode)
+        return previousNode.value;
 
     }
 
@@ -100,4 +115,5 @@ console.log(newLinkedList.size())
 console.log(newLinkedList.first());
 console.log(newLinkedList.last());
 console.log(newLinkedList.at(5))
+console.log(newLinkedList.pop())
 newLinkedList.toString();
